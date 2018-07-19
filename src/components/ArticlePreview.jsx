@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class ArticlePreview extends Component {
-
-  render() {
-    return (
-      <div>
-        <h3>Title</h3>
-        <p>Excerpt</p>
-        <p>Author</p>
-      </div>
-    )
-  }
-
+function ArticlePreview(props) {
+  return (
+    <div className="article-preview">
+      <h3 dangerouslySetInnerHTML={{__html: props.title}}></h3>
+      <p>{props.excerpt}</p>
+    </div>
+  )
 }
 
 export default ArticlePreview;

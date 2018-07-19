@@ -20,9 +20,12 @@ class App extends React.Component {
   }
 
   render() {
-    const previewContent = this.state.articleData.map(item => {
-      console.log(item);
-      return item;
+    const previewContent = this.state.articleData.map((article, index) => {
+      return <ArticlePreview
+        key={index}
+        title={article.title.rendered}
+        excerpt={article.excerpt.rendered}
+      />
     })
     return (
       <div className="App">
@@ -30,7 +33,7 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Anton Emery - React Test</h1>
         </header>
-        <ArticlePreview />
+        {previewContent}
       </div>
     );
   }
