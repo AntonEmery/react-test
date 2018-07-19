@@ -1,10 +1,10 @@
 import React from 'react';
 
-function ArticlePreview(props) {
+function ArticlePreview({ title, excerpt }) {
   return (
     <div className="article-preview">
-      <h3 dangerouslySetInnerHTML={{__html: props.title}}></h3>
-      <p>{props.excerpt}</p>
+      <h3>{title}</h3>
+      <p dangerouslySetInnerHTML={{__html: excerpt}}></p>
     </div>
   )
 }

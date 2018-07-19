@@ -13,6 +13,7 @@ class App extends React.Component {
     try {
       const data = await fetch('https://thewirecutter.com/wp-json/wp/v2/posts');
       const result = await data.json();
+      console.log(result);
       this.setState({ articleData: result })
     } catch(error) {
       console.log(error)
