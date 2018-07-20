@@ -11,23 +11,22 @@ class App extends Component {
     };
   }
 
-
   async componentDidMount() {
     try {
       const data = await fetch('https://thewirecutter.com/wp-json/wp/v2/posts');
       const result = await data.json();
       this.setState({ articleData: result });
     } catch (error) {
-      console.log(error);
+      console.log('Error', error);
     }
   }
 
   render() {
     const { articleData } = this.state;
-    const previewContent = articleData.map((article, index) => {
+    const previewContent = articleData.map((article) => {
       return (
         <ArticlePreview
-          key={index}
+          key={article.id}
           title={article.title.rendered}
           excerpt={article.excerpt.rendered}
         />

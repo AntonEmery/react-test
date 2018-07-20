@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function ArticlePreview({ title, excerpt }) {
   return (
@@ -10,5 +11,10 @@ function ArticlePreview({ title, excerpt }) {
     </div>
   );
 }
+
+ArticlePreview.propTypes = {
+  title: PropTypes.string.isRequired,
+  excerpt: PropTypes.string.isRequired,
+};
 
 export default ArticlePreview;
