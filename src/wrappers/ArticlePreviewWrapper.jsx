@@ -11,6 +11,7 @@ class ArticlePreviewWrapper extends Component {
     try {
       const data = await fetch('https://thewirecutter.com/wp-json/wp/v2/posts');
       const result = await data.json();
+      console.log(result);
       this.setState({ articleData: result })
     } catch(error) {
       console.log(error)
@@ -23,6 +24,7 @@ class ArticlePreviewWrapper extends Component {
           key={index}
           title={article.title.rendered}
           excerpt={article.excerpt.rendered}
+          id={article.id}
        />
     })
     return (
